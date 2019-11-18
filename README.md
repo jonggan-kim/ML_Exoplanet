@@ -1,5 +1,7 @@
- This is to create machine learning models capable of classifying candidate exoplanets from the raw dataset.
+This is to create machine learning models capable of classifying candidate exoplanets from the raw dataset.
+T
+he process is as below:
 
-1. [Preprocess the raw data](#Preprocessing)
-2. [Tune the models](#Tune-Model-Parameters)
-3. [Compare two or more models](#Evaluate-Model-Performance)
+1. Preprocess the raw data
+2. Tune the models
+3. Compare two models
