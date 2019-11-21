@@ -19,7 +19,7 @@ df = df.dropna(axis='columns', how='all')
 df = df.dropna()
 df.head()
 
-# Create a Train Test Split
+### Create a Train Test Split
 
 Use `koi_disposition` for the y values
 
@@ -40,7 +40,7 @@ X_train.head()
 
 X_test.head()
 
-# Pre-processing
+### Pre-processing
 
 Scale the data using the MinMaxScaler
 
@@ -53,7 +53,7 @@ X_test_scaled = X_scaler.transform(X_test)
 X_train_scaled
 
 
-# Create and Train the Logistic Regression Model
+### Create and Train the Logistic Regression Model
 
 
 
@@ -63,7 +63,7 @@ classifier
 
 classifier.fit(X_train_scaled, y_train)
 
-# classifier.fit(X_train, y_train)
+### classifier.fit(X_train, y_train)
 
 print(f"Training Data Score: {classifier.score(X_train_scaled, y_train)}")
 print(f"Testing Data Score: {classifier.score(X_test_scaled, y_test)}")
@@ -72,8 +72,9 @@ classifier.fit(X_train, y_train)
 
 print(f"Training Data Score: {classifier.score(X_train, y_train)}")
 print(f"Testing Data Score: {classifier.score(X_test, y_test)}")
+<img src="images/LogisticRegression.png">
 
-# Train the Support Vector Machine
+### Train the Support Vector Machine
 
 from sklearn.svm import SVC 
 model = SVC(kernel='linear')
@@ -81,25 +82,26 @@ model.fit(X_train_scaled, y_train)
 
 print(f"Training Data Score: {model.score(X_train_scaled, y_train)}")
 print(f"Testing Data Score: {model.score(X_test_scaled, y_test)}")
+<img src="images/SVM.png">
 
-
-# Hyperparameter Tuning
+### Hyperparameter Tuning
 
 Use `GridSearchCV` to tune the `C` and `gamma` parameters
 
-# Create the GridSearchCV model
+### Create the GridSearchCV model
 from sklearn.model_selection import GridSearchCV
 param_grid = {'C': [1, 5, 10],
               'gamma': [0.0001, 0.001, 0.01]}
 grid = GridSearchCV(model, param_grid, verbose=3)
 
-# Train the model with GridSearch
+### Train the model with GridSearch
 grid.fit(X_train_scaled, y_train)
 
 print(grid.best_params_)
 print(grid.best_score_)
-
-# Decision Tree Model
+<img src="images/Hypertuning.png">
+<img src="images/Hypertuning2.png">
+### Decision Tree Model
 
 from sklearn import tree
 import pandas as pd
@@ -119,11 +121,10 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(X_train_scaled, y_train)
 clf.score(X_test_scaled, y_test)
 
-# Random Forest Model
+### Random Forest Model
 
 from sklearn.ensemble import RandomForestClassifier
 rf = RandomForestClassifier(n_estimators=200)
 rf = rf.fit(X_train_scaled, y_train)
 rf.score(X_test_scaled, y_test)
-
-
+<img src="images/DecisionTree.png">
