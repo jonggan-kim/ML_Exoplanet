@@ -6,16 +6,16 @@ The process is as below:
 1. Preprocess the raw data
 2. Tune the models
 3. Compare the models
-
+---
 import pandas as pd
 
 ### Read the CSV and Perform Basic Data Cleaning
 
 df = pd.read_csv("cumulative.csv")
 df = df.drop(columns=["rowid", "kepid", "kepoi_name", "kepler_name", "koi_pdisposition", "koi_score", "koi_tce_delivname"])
-# Drop the null columns where all values are null
+### Drop the null columns where all values are null
 df = df.dropna(axis='columns', how='all')
-# Drop the null rows
+### Drop the null rows
 df = df.dropna()
 df.head()
 
