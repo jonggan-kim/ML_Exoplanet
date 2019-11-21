@@ -1,3 +1,5 @@
+## Machine Learning Models generation
+
 This is to create machine learning models capable of classifying candidate exoplanets from the raw dataset using Logistic Regression., SVM, Decision Tree and Random Forest
 The process is as below:
 
@@ -7,7 +9,7 @@ The process is as below:
 
 import pandas as pd
 
-# Read the CSV and Perform Basic Data Cleaning
+### Read the CSV and Perform Basic Data Cleaning
 
 df = pd.read_csv("cumulative.csv")
 df = df.drop(columns=["rowid", "kepid", "kepoi_name", "kepler_name", "koi_pdisposition", "koi_score", "koi_tce_delivname"])
@@ -79,6 +81,7 @@ model.fit(X_train_scaled, y_train)
 
 print(f"Training Data Score: {model.score(X_train_scaled, y_train)}")
 print(f"Testing Data Score: {model.score(X_test_scaled, y_test)}")
+
 
 # Hyperparameter Tuning
 
